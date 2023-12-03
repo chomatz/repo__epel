@@ -1,2 +1,23 @@
 ---
-# tasks file for repo__epel
+
+- name: ensure tasks run only on selected os releases
+  block:
+
+    - name: enable CodeReady Linux Builder repository
+      command:
+        cmd: dnf config-manager --set-enabled crb
+
+    - name: install epel repositories
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+        - epel-release
+        - epel-next-release
+
+  when: >
+    ansible_distribution == "CentOS" or
+    ansible_distribution == "RedHat" or
+    ansible_distribution == "Rocky"
+
+...
