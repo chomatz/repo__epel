@@ -4,7 +4,7 @@
   block:
 
     - name: enable CodeReady Linux Builder repository
-      command:
+      ansible.builtin.command:
         cmd: dnf config-manager --set-enabled crb
 
     - name: install epel repositories
