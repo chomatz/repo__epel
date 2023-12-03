@@ -12,7 +12,7 @@ role for enabling epel related repositories
 
   tasks:
 
-    - name: example 1
+    - name: enable epel related repositories
       include_role:
         name: repo__epel
 
