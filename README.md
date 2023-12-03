@@ -4,7 +4,8 @@ role for enabling epel related repositories
 # variables
 # dependencies
 # examples
-`---
+```
+---
 
 - name: usage example
   hosts: target_hosts
@@ -15,4 +16,5 @@ role for enabling epel related repositories
       include_role:
         name: repo__epel
 
-...`
+...
+```
