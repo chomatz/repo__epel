@@ -7,7 +7,7 @@
       ansible.builtin.command:
         cmd: dnf config-manager --set-enabled crb
 
-    - name: install epel repositories
+    - name: enable epel repositories
       ansible.builtin.package:
         name: "{{ item }}"
         state: latest
