@@ -30,9 +30,10 @@
 
         - name: enable epel repositories
           ansible.builtin.package:
-            name: "{{ epel.package }}"
+            name: "{{ epel_package }}"
             state: present
             disable_gpg_check: true
+          when: not epel_override
 
       when: ansible_distribution == "RedHat"
 
